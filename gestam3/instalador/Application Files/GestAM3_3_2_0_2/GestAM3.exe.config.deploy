@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6"/>
+  </startup>
+  <appSettings>
+    <add key="DirectorioLocal" value="C:\Users\Public\GestAM3\Respaldo\"/>
+    <add key="DirectorioBaseLocal" value="C:\Users\Public\GestAM3\"/>
+    <add key="DirectorioLogsLocal" value="C:\Users\Public\GestAM3\Logs\"/>
+    <add key="DirectorioPublicacionLocal" value="C:\Users\Public\GestAM3\Publicacion\"/>
+    <add key="DirectorioRemoto" value="\Gestam3\Respaldo\"/>
+    <add key="DirectorioRemotoDBX" value="/Gestam3/Respaldo"/>
+    <add key="DirectorioLogs" value="\Gestam3\"/>
+    <add key="DirectorioSqlFile" value="sql\"/>
+    <add key="nombreDatabase" value="GestAM3Db"/>
+    <add key="SqlFile" value="GestAM3.sql"/>
+    <add key="SqlUser" value="NT SERVICE\MSSQLSERVER"/>
+    <add key="AL_CLASE" value="5"/>
+    <!-- strModo puede ser LOCAL para el ordenador de la academia o REMOTO para los ordenadores fuera de la academia. -->
+    <add key="StrModo" value="LOCAL"/>
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  <!-- nuevas variables para Gestam 3.0 -->
+    <add key="DbxBackUpFolder" value="/Respaldo"/>
+    <add key="DbxBaseFolder" value=""/>
+    <add key="DbxLogsFolder" value="/Logs"/>
+    <add key="DbxPublicacionFolder" value="/Publicacion"/>
+    <!-- token dbx encriptado -->
+    <add key="DbxToken" value="+Zyo3yv2wDRq37oHx13rcSKQuSTSxmJlKGZOCCdECj/z5zPbldu5udtLKm2vUsb5g0flbtIVp/qt8i6OsN/qFq8zR/X5ads8"/>
+  </appSettings>
+  <connectionStrings>
+    <!-- cadena de conexion. Cambiar el nombre del server si es necesario-->
+    <add name="strCon" connectionString="Server=(local);DataBase= GestAM3Db; integrated security= true" providerName="System.Data.SqlClient"/>
+    <add name="strMaster" connectionString="Server=(local);DataBase= master; integrated security= true" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>
